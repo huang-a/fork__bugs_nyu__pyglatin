@@ -1,11 +1,16 @@
+import re
 
-import click
 VOWELS = "aeiou"
 
-def to_piglatin(eng):
-		if eng[0] in vowels:
-			return eng + "way"
-		else if not eng[1] in vowels:
-			return eng[1:] + eng[0] + "ay"
-		else:
-			return eng[2:] + eng[0:2] +"ay"
+def to_piglatin(text):
+    word_list = []
+    for word in whitespace.split(text):
+        word_list.append(_word_to_english(word))
+    return ' '.join(word_list)
+
+def _word_to_piglatin(word):
+    if word[0] in VOWELS:
+        return word+'way'
+    for i in range(len(word)):
+        if word[i] in VOWELS:
+            return word[i:]+word[:i]+'ay'
