@@ -22,4 +22,3 @@ to use this tool.
 
 #### Arguments
 * `file` *optional* - File name to read from; if blank, program reads from `stdin`
->>>>>>> cl-tool
